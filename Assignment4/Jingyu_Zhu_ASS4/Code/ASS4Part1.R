@@ -1,0 +1,15 @@
+rm(list = ls())
+set.seed(100) # Set a seed to fix the generated random numbers
+dataset1 <- cbind(rnorm(50, 0, 1), rnorm(50, 1, 1), matrix(-1, 50, 1))
+dataset2 <- cbind(rnorm(50, 7, 1), rnorm(50, 8, 1), matrix(1, 50, 1))
+separableData <- rbind(dataset1, dataset2)
+plot(-5:10, -5:10, type = "n", main='Linearly Separable', ylab='y', xlab='x')
+points(dataset1[,1], dataset1[,2], col = "black")
+points(dataset2[,1], dataset2[,2], col = "red")
+
+dataset3 <- cbind(rnorm(50, 0, 2), rnorm(50, 1, 2), matrix(-1, 50, 1))
+dataset4 <- cbind(rnorm(50, 2, 2), rnorm(50, 3, 2), matrix(1, 50, 1))
+nonSeparableData <- rbind(dataset3, dataset4)
+plot(-5:10, -5:10, type = "n", main='Not Separable', ylab='y', xlab='x')
+points(dataset3[,1], dataset3[,2], col = "black")
+points(dataset4[,1], dataset4[,2], col = "red")

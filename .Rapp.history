@@ -1,0 +1,2 @@
+dir()
+data <- read.table("svar-set1.dat")
